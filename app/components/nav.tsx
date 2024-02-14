@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
 import Link from "next/link";
+import codeIcon from '@/public/icons/code-solid.svg'
+import Image from "next/image";
 
 export default function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -20,7 +22,18 @@ export default function Navbar() {
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="text-lg font-bold">
                         <Link href="/">
-                            <span className="text-4xl text-[#5CB8E4]">Teamster</span>
+                            <div className="text-lg font-bold flex items-center gap-2"> {/* Make sure the `a` tag is used here for proper navigation */}
+                                <span>
+                                    <Image
+                                        src={codeIcon}
+                                        alt="code icon"
+                                        width={45}
+                                        height={45}
+                                    >
+                                    </Image>
+                                </span>
+                                <span className="text-4xl text-[#5CB8E4]">Teamster</span>
+                            </div>
                         </Link>
                     </div>
                     <div className="md:hidden">

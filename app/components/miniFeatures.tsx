@@ -19,15 +19,15 @@ const MiniFeatureSection: React.FC = () => {
 
     {
       title: "Live-Chat",
-      description: "Send messages and voice memos to your peers"
+      description: "Send messages and voice memos to your peers."
     },
     {
       title: "Divide and Conquer",
-      description: "Break down your work load with our task manager"
+      description: "Break down your work load with our task manager."
     },
     {
       title: "Connect on the Go",
-      description: "Make commits from anywhere all with one button"
+      description: "Join from any device, from anywhere."
     },
     // ... add other mini features if needed
   ];

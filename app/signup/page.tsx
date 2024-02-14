@@ -13,6 +13,9 @@ export default function SignUp() {
           <input type="text" placeholder="Last Name" className="border p-2 rounded" />
           <input type="tel" placeholder="Phone Number" className="border p-2 rounded" />
           <input type="email" placeholder="Email" className="border p-2 rounded" />
+          <input type="password" placeholder="Password" className="border p-2 rounded" />
+          <input type="password" placeholder="Confirm Password" className="border p-2 rounded" />
+
           <button type="submit" className="bg-[#5CB8E4] hover:opacity-75 text-white font-bold py-2 px-4 rounded">
             Sign Up
           </button>
