@@ -9,10 +9,7 @@ export default function Home() {
       <Navbar/>
       <div className="mt-20 mx-auto px-4 md:mt-28">
         <div className="text-center md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#5CB8E4] lg:text-5xl xl:text-6xl mb-4">Teamster</h1>
-          <p className="text-2xl text-white mb-10">
-            The new way to build products.
-          </p>
+          <h1 className="text-4xl font-bold text-[#5CB8E4] lg:text-5xl xl:text-6xl mb-4 gradient-text p-2">Teamster is the new way to build products</h1>
           <p className="mt-6 text-md text-gray-400 lg:text-xl xl:text-2xl mb-10">
             Streamline your way to success. Elevate your project, achieve goals faster, and simplify collaboration with ease.
           </p>
