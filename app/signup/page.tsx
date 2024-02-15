@@ -1,44 +1,67 @@
-import React from 'react';
-import { FaApple, FaGoogle, FaGithub } from 'react-icons/fa';
+'use client'
+import React, { useState } from 'react';
+import Image from 'next/image';
+import codeIcon from '../../public/icons/code-solid.svg'; // Update the path to your icon
 
 export default function SignUp() {
+  const [email, setEmail] = useState('');
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [emailError, setEmailError] = useState('');
+
+
+  const handleEmailSubmit = () => {
+    if (!showEmailInput) {
+      setShowEmailInput(true);
+    } else if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      // Simple regex for email validation - consider a more robust solution for production
+      setEmailError('Please enter a valid email address.');
+    } else {
+      setEmailError(''); // Clear any error
+      // Add your logic here for what happens when a user submits a valid email
+      console.log('Email submitted:', email);
+      // Here you might call a function to handle the email sign-up process
+    }
+  };
+
   return (
-    <div className="w-full max-w-xs mx-auto my-16 bg-[181818] border-4 p-4 rounded-lg">
-      <h1 className="text-2xl font-bold mb-6 text-center text-[#5CB8E4]">Sign Up</h1>
-
-      {/* User Details Form */}
-      <div className="border-t pt-6">
-        <form className="flex flex-col space-y-4">
-          <input type="text" placeholder="First Name" className="border p-2 rounded" />
-          <input type="text" placeholder="Last Name" className="border p-2 rounded" />
-          <input type="tel" placeholder="Phone Number" className="border p-2 rounded" />
-          <input type="email" placeholder="Email" className="border p-2 rounded" />
-          <input type="password" placeholder="Password" className="border p-2 rounded" />
-          <input type="password" placeholder="Confirm Password" className="border p-2 rounded" />
-
-          <button type="submit" className="bg-[#5CB8E4] hover:opacity-75 text-white font-bold py-2 px-4 rounded">
-            Sign Up
-          </button>
-        </form>
-        <div className="flex flex-col space-y-4 mb-6 mt-6">
-            <button className="flex items-center justify-center bg-[#5CB8E4] text-white p-2 rounded hover:opacity-75">
-            <FaApple className="mr-2" /> Sign up with Apple
-            </button>
-            <button className="flex items-center justify-center bg-[#5CB8E4] text-white p-2 rounded hover:opacity-75">
-            <FaGoogle className="mr-2" /> Sign up with Google
-            </button>
-            <button className="flex items-center justify-center bg-[#5CB8E4] text-white p-2 rounded hover:opacity-75">
-            <FaGithub className="mr-2" /> Sign up with GitHub
-            </button>
+    <div className="flex items-center justify-center h-screen">
+      <div className="p-10 rounded-lg text-white text-center max-w-md w-full">
+        <div className="mb-6 flex justify-center">
+          <Image
+            src={codeIcon}
+            alt="code icon"
+            width={50}
+            height={50}
+            layout='fixed'
+          />
         </div>
-      </div>
-
-      {/* Log In Link */}
-      <div className="text-center mt-6">
-        <p className='text-white'>
-          Already have an account? <a href="/login" className="text-[#5CB8E4] hover:underline">Log in</a>
+        <h2 className="text-2xl font-medium mb-6">Create your Teamster account</h2>
+        <button className="bg-[#5CB8E4] hover:bg-[#72C6EA] text-white py-3 px-6 rounded-md w-full mb-3 font-medium">Continue with Google</button>
+        <button className="bg-gray-500 hover:bg-gray-400 text-white py-3 px-6 rounded-md w-full mb-3 font-medium">Continue with GitHub</button>
+        <button
+          onClick={handleEmailSubmit}
+          className="bg-gray-500 hover:bg-gray-400 text-white py-3 px-6 rounded-md w-full font-medium relative"
+        >
+          Continue with Email
+        </button>
+        {showEmailInput && (
+          <div className="animate-slide-in mt-3">
+            <input
+              type="email"
+              placeholder="Email address"
+              className="text-white py-3 px-4 rounded-md w-full bg-transparent border-2 border-[#5CB8E4]"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoFocus
+            />
+            {emailError && <p className="text-red-500 text-xs mt-2">{emailError}</p>}
+          </div>
+        )}
+        <p className="text-gray-400 text-sm mt-6">
+          By signing up, you agree to the <a href="/terms" className="text-[#5CB8E4] hover:underline">Terms of Service</a>.
         </p>
       </div>
     </div>
   );
 }
+

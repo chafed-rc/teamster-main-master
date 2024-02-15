@@ -27,8 +27,8 @@ export default function Navbar() {
                                     <Image
                                         src={codeIcon}
                                         alt="code icon"
-                                        width={45}
-                                        height={45}
+                                        width={30}
+                                        height={30}
                                     >
                                     </Image>
                                 </span>
