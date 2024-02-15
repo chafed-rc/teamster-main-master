@@ -32,7 +32,7 @@ export default function Navbar() {
                                     >
                                     </Image>
                                 </span>
-                                <span className="text-4xl text-[#5CB8E4]">Teamster</span>
+                                <span className="text-2xl text-[#5CB8E4]">Teamster</span>
                             </div>
                         </Link>
                     </div>
