@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default async function Dashboard(){
 
-    const session = await  auth()
+    const session = await auth()
 
 
     if(!session){
@@ -43,7 +43,7 @@ export default async function Dashboard(){
                     />
                 </div>
                 <h2 className="text-2xl font-medium mb-6">Ready to get to work?</h2>
-                <Link href={'/userDash'}><span className='text-2xl hover:text-[#5CB8E4]'>Launch Dashboard</span></Link>
+                <Link href={'/dashboard/workspace'}><span className='text-2xl hover:text-[#5CB8E4]'>Launch Dashboard</span></Link>
             </div>
         </div>
         </>

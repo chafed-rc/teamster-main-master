@@ -39,8 +39,7 @@ export default function SignUp() {
             />
           </div>
           <h2 className="text-2xl font-medium mb-6">Create your Teamster account</h2>
-          <button className="bg-[#5CB8E4] hover:bg-[#72C6EA] text-white py-3 px-6 rounded-md w-full mb-3 font-medium">Continue with Google</button>
-          <button onClick={() => signIn('github')} className="bg-gray-500 hover:bg-gray-400 text-white py-3 px-6 rounded-md w-full mb-3 font-medium">Continue with GitHub</button>
+          <button onClick={() => signIn('github')} className="bg-[#5CB8E4] hover:bg-[#72C6EA] text-white py-3 px-6 rounded-md w-full mb-3 font-medium">Continue with GitHub</button>
           <button
             onClick={handleEmailSubmit}
             className="bg-gray-500 hover:bg-gray-400 text-white py-3 px-6 rounded-md w-full font-medium relative"

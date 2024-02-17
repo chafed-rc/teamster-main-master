@@ -2,8 +2,16 @@
 import FeatureSection from "./components/features";
 import MiniFeatureSection from "./components/miniFeatures";
 import Navbar from "./components/nav";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter()
+
+  const handleButtonClick = () => { router.push('/signup')}
+  const handleLearnMore = () => { router.push('/information')}
+
+
+
   return ( 
     <>
       <Navbar/>
@@ -14,8 +22,8 @@ export default function Home() {
             Streamline your way to success. Elevate your project, achieve goals faster, and simplify collaboration with ease.
           </p>
           <div className="flex flex-col md:flex-row mt-7 lg:mt-10 items-center justify-center gap-6">
-            <button className="bg-transparent border-2 border-[#5CB8E4] text-[#5CB8E4] hover:bg-[#5CB8E4] hover:text-white transition-colors duration-300 ease-in-out rounded-3xl text-xl px-6 py-3 lg:text-2xl">Learn More</button>
-            <button className="bg-[#5CB8E4] text-white hover:opacity-90 transition-opacity duration-300 ease-in-out rounded-3xl text-xl px-6 py-3 lg:text-2xl">Get Started</button>
+            <button onClick={handleLearnMore} className="bg-transparent border-2 border-[#5CB8E4] text-[#5CB8E4] hover:bg-[#5CB8E4] hover:text-white transition-colors duration-300 ease-in-out rounded-3xl text-xl px-6 py-3 lg:text-2xl">Learn More</button>
+            <button onClick={handleButtonClick} className="bg-[#5CB8E4] text-white hover:opacity-90 transition-opacity duration-300 ease-in-out rounded-3xl text-xl px-6 py-3 lg:text-2xl">Get Started</button>
           </div>
           <FeatureSection />
           <MiniFeatureSection />
