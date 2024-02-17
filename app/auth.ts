@@ -7,7 +7,6 @@ import Google from "next-auth/providers/google"
 export const authConfig = {
   providers: [
     GitHub,
-    Google
   ]
 } satisfies NextAuthConfig
 
